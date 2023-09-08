@@ -12,7 +12,7 @@
         <img src="./assets/profile_pic.png" alt="David Uwandu" data-testid="slackDisplayImage"/>
         <div>
             <h1 data-testid="slackUserName">David Uwandu</h1>
-            <div class="flex">
+            <div class="">
                 <p data-testid="currentDayOfTheWeek" id="today"></p>
                 <p data-testid="currentUTCTime" id="time">9</p>
             </div>
@@ -26,7 +26,8 @@
         const date = new Date();
 
         //the time variable is assigned the value of time in UTC format, and parsed into the html element with an id of 'time'.
-        let time = `Time: ${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}:${date.getUTCMilliseconds()}`;
+        // let time = `Time: ${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}:${date.getUTCMilliseconds()}`;
+        let time = date.toUTCString();
         document.getElementById("time").innerHTML = time;
 
         let day = date.getDay();
