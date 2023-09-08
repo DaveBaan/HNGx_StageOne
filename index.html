@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNGx Stage One Task</title>
+    <!-- <script type="text/javascript" src="./index.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <img src="./assets/profile_pic.png" alt="David Uwandu" data-testid="slackDisplayImage"/>
+        <div>
+            <h2 data-testid="slackUserName">David Uwandu</h2>
+            <div>
+                <p data-testid="currentDayOfTheWeek" id="today"></p>
+                <p data-testid="currentUTCTime" id="time">9</p>
+            </div>
+            <p data-testid="myTrack">FRONTEND</p>
+            <a href="" target="_blank">GitHub Url</a>
+        </div>
+    </div>
+
+    <script>
+        // Create new instance of Date object.
+        const date = new Date();
+
+        //the time variable is assigned the value of time in UTC format, and parsed into the html element with an id of 'time'.
+        let time = `${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}:${date.getUTCMilliseconds()}`;
+        document.getElementById("time").innerHTML = time;
+
+        let day = date.getDay();
+        console.log(day);
+
+        function dayOfWeek(val){
+            let today = "";
+
+            switch (val) {
+                case 0: 
+                    today = "Sunday";
+                    break;
+                case 1: 
+                    today = "Monday";
+                    break;
+                case 2: 
+                    today = "Tuesday";
+                    break;
+                case 3: 
+                    today = "Wednesday";
+                    break;
+                case 4: 
+                    today = "Thursday";
+                    break;
+                case 5: 
+                    today = "Friday";
+                    break;
+                case 6: 
+                    today = "Saturday";
+            }
+            console.log(today);  
+            return document.getElementById("today").innerHTML= today;
+        } 
+
+        dayOfWeek(day);
+    </script>
+</body>
+</html>
