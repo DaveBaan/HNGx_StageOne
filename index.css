@@ -1,0 +1,28 @@
+.container {
+    width:600px;
+    height: 400px;
+    margin: auto !important;
+    border: 2px solid aquamarine;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color:blue;
+    font-size: large;
+    font-weight: 700;
+}
+
+
